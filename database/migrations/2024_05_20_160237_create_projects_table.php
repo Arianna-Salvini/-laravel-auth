@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 return new class extends Migration
 {
     /**
@@ -16,7 +17,7 @@ return new class extends Migration
             $table->string('title', 150);
             $table->string ('slug', 150);
             $table->string('subtitle', 250)->nullable();
-            $table->array('technology')->nullable();
+            $table->string('technology')->nullable();
             $table->text('description')->nullable();
             $table->string('url', 255)->nullable();
             $table->string('image', 255)->nullable();
