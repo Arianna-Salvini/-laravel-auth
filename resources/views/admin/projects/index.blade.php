@@ -16,7 +16,7 @@
                             <th scope="col">DESCRIPTION</th>
                             <th scope="col">TECHNOLOGY</th>
                             <th scope="col">URL</th>
-                            <th scope="col">ACTION</th>
+                            <th scope="col" class="text-center">ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -24,7 +24,11 @@
                             <tr class="">
                                 <td scope="row">{{ $project->id }}</td>
                                 <td>
-                                    <img width="160px" src=" {{ $project->image }}" alt="{{ $project->title }}">
+
+                                    <a href="{{ route('admin.projects.show', $project) }}"
+                                        class="btn btn-outline-secondary px-3">
+                                        <img width="160px" src=" {{ $project->image }}" alt="{{ $project->title }}">
+                                    </a>
                                 </td>
                                 <td>{{ $project->title }}</td>
                                 <td>{{ $project->slug }}</td>
@@ -32,7 +36,13 @@
                                 <td>{{ $project->description }}</td>
                                 <td>{{ $project->technology }}</td>
                                 <td>{{ $project->url }}</td>
-                                <td>view/edit/delete</td>
+                                <td class="text-center">
+                                    <a href="{{ route('admin.projects.show', $project) }}"
+                                        class="btn btn-outline-secondary px-3">
+                                        <span style="font-size:0.9rem"> View </span>
+                                    </a>
+                                    edit/delete
+                                </td>
                             </tr>
                         @empty
                             <tr class="">
