@@ -3,7 +3,12 @@
 @section('content')
     <section class="bg-body-tertiary">
         <div class="container">
-            <h2 class="text-center text-secondary-emphasis py-4">Projects</h2>
+            <div class="d-flex justify-content-between align-items-center py-4">
+                <h2 class="text-center text-secondary-emphasis ">Projects</h2>
+                <a href="{{ route('admin.projects.create') }}" class="btn btn-dark"> <i
+                        class="fa-solid fa-circle-plus pe-2"></i>New
+                    Project</a>
+            </div>
             <div class="table-responsive">
                 <table class="table table-secondary table-striped table-bordered ">
                     <thead>
@@ -37,8 +42,9 @@
                                 <td>{{ $project->url }}</td>
                                 <td class="text-center">
                                     <a href="{{ route('admin.projects.show', $project) }}"
-                                        class="btn btn-outline-secondary px-3">
-                                        <span style="font-size:0.9rem"> View </span>
+                                        class="btn btn-outline-secondary px-2">
+                                        <i class="fa fa-eye fa-sm fa-fw pe-1" aria-hidden="true"></i>
+                                        <span style="font-size:0.8rem"> View </span>
                                     </a>
                                     edit/delete
                                 </td>
