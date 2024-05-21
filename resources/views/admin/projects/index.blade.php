@@ -25,8 +25,7 @@
                                 <td scope="row">{{ $project->id }}</td>
                                 <td>
 
-                                    <a href="{{ route('admin.projects.show', $project) }}"
-                                        class="btn btn-outline-secondary px-3">
+                                    <a href="{{ route('admin.projects.show', $project) }}">
                                         <img width="160px" src=" {{ $project->image }}" alt="{{ $project->title }}">
                                     </a>
                                 </td>
