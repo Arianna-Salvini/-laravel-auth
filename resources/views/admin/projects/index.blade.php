@@ -46,7 +46,12 @@
                                         <i class="fa fa-eye fa-sm fa-fw pe-1" aria-hidden="true"></i>
                                         <span style="font-size:0.8rem"> View </span>
                                     </a>
-                                    edit/delete
+                                    <a href="{{ route('admin.projects.create', $project) }}"
+                                        class="btn btn-outline-secondary px-2">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        <span style="font-size:0.8rem"> Edit </span>
+                                    </a>
+                                    delete
                                 </td>
                             </tr>
                         @empty
