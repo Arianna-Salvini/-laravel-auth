@@ -6,6 +6,7 @@ use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Support\Str;
 
 class ProjectController extends Controller
@@ -57,7 +58,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -65,7 +66,14 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        // dd($request->all());
+
+        $validated= $request->validated();
+        $slug= Str::slug($request->title, '-');
+        $validated['slug'] = $slug;
+
+        $project->update($validated);
+        return to_route('admin.projects.show', $project);
     }
 
     /**
