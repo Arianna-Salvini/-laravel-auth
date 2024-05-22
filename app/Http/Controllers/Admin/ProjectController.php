@@ -50,7 +50,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('admin/projects/show', compact('project'))->with('status', 'Project updated successfully');
+        return view('admin/projects/show', compact('project'));
     }
 
     /**
@@ -58,7 +58,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'))->with('message', 'Project updated successfully');
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -73,7 +73,7 @@ class ProjectController extends Controller
         $validated['slug'] = $slug;
 
         $project->update($validated);
-        return to_route('admin.projects.show', $project);
+        return to_route('admin.projects.show', $project)->with('status', 'Project updated successfully');
     }
 
     /**
