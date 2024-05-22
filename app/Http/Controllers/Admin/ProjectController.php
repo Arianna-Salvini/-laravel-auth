@@ -30,7 +30,13 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        
+        //dd($request->all());
+
+        $validated= $request -> validated();
+
+        Project::create($validated);
+
+        return to_route('admin.project.index');
     }
 
     /**
