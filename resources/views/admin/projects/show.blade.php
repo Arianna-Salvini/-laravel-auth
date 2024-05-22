@@ -17,7 +17,6 @@
                 <div class="ps-3">
                     <p>{{ $project->description }}</p>
                     <a href="{{ $project->url }}">
-                        <i class="fa fa-eye" aria-hidden="true"></i>
                         <span>{{ $project->url }}</span>
                     </a>
                 </div>
