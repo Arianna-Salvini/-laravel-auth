@@ -18,3 +18,9 @@ Per la parte di back-office creiamo un resource controller Admin\ProjectControll
 
 ## Bonus:
 Implementiamo la validazione dei dati dei Progetti nelle operazioni CRUD che lo richiedono usando le form requests.
+
+# Descrizione 2:
+Ripercorrete gli steps visti a lezione e completate le operazioni CRUD (edit/update/delete)
+
+## Bonus:
+Aggiungete i messaggi di sessione quando fare il redirect dopo aver creato, aggiornato e cancellato una risorsa.
