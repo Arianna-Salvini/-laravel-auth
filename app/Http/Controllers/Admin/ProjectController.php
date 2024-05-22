@@ -73,7 +73,7 @@ class ProjectController extends Controller
         $validated['slug'] = $slug;
 
         $project->update($validated);
-        return to_route('admin.projects.show', $project)->with('status', 'Project updated successfully');
+        return to_route('admin.projects.show', $project)->with('status', "Project  $project->title updated successfully");
     }
 
     /**
@@ -81,6 +81,8 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
+        
+        return  to_route('admin.project.index')->with('status', "Project  $project->title DELETED successfully");
     }
 }
