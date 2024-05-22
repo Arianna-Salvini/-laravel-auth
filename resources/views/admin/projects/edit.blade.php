@@ -71,7 +71,6 @@
             </div>
 
 
-
             <div class="mb-3">
                 <label for="description" class="form-label">Description of project</label>
                 <textarea class="form-control @error('description') is-inavlid @enderror" name="description" id="description"

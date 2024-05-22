@@ -23,8 +23,12 @@
             </div>
             </tbody>
             </table>
+
+            <a href="{{ route('admin.projects.index') }}" class="btn btn-outline-dark py-2 px-3">
+                <i class="fa fa-long-arrow-left pe-1" aria-hidden="true"></i>
+                Back
+            </a>
         </div>
 
-        </div>
     </section>
 @endsection
