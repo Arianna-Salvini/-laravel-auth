@@ -83,6 +83,6 @@ class ProjectController extends Controller
     {
         $project->delete();
         
-        return  to_route('admin.project.index')->with('status', "Project  $project->title DELETED successfully");
+        return  to_route('admin.projects.index')->with('status', "Project  $project->title DELETED successfully");
     }
 }

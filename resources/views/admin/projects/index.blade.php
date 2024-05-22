@@ -24,8 +24,8 @@
                 </div>
             @endif
 
-            <div class="table-responsive">
-                <table class="table table-secondary table-striped table-bordered ">
+            <div class="table-responsivet" style="font-size:0.8rem">
+                <table class="table table-secondary table-striped table-bordered">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -56,19 +56,19 @@
                                 <td>{{ $project->technology }}</td>
                                 <td>{{ $project->url }}</td>
                                 <td
-                                    class="text-center p-3 d-flex flex-column justify-content-center align-items-center gap-2 ">
+                                    class="text-center d-flex flex-column justify-content-center align-items-center gap-2 p-3">
                                     <a href="{{ route('admin.projects.show', $project) }}"
                                         class="btn btn-outline-secondary px-2 w-100">
                                         <i class="fa fa-eye fa-sm fa-fw pe-1" aria-hidden="true"></i>
-                                        <span style="font-size:0.8rem"> View </span>
+                                        <span style="font-size:0.9rem"> View </span>
                                     </a>
                                     <a href="{{ route('admin.projects.edit', $project) }}"
                                         class="btn btn-outline-secondary px-2 w-100">
                                         <i class="fa fa-pencil" aria-hidden="true"></i>
-                                        <span style="font-size:0.8rem"> Edit </span>
+                                        <span style="font-size:0.9rem"> Edit </span>
                                     </a>
                                     <!-- Modal trigger button -->
-                                    <button type="button" class="btn btn-danger w-100" data-bs-toggle="modal"
+                                    <button type="button" class="btn btn-outline-danger w-100" data-bs-toggle="modal"
                                         data-bs-target="#modal-{{ $project->id }}">
                                         <i class="fas fa-trash fa-xs fa-fw"></i>
                                         <span style="font-size: 0.7rem" class="text-uppercase">Delete</span>
@@ -82,32 +82,32 @@
                                         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
                                             role="document">
                                             <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="modalTitle-{{ $project->id }}">
-                                                        Delete project
+                                                <div class="modal-header bg-dark text-danger" data-bs-theme="danger">
+                                                    <h5 class="modal-title  text-center text-danger"
+                                                        id="modalTitle-{{ $project->id }}">
+                                                        DELETING PROJECT
                                                     </h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
+                                                    <button type="button" class="btn-close" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    Are you sure you want to delete this project:
-                                                    {{ $project->title }}
-
+                                                    Destroy all the evidence of the project:
+                                                    {{ $project->title }} ?
+                                                    Are you sure?
 
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
+                                                <div class="modal-footer d-flex justify-content-center">
+                                                    <button type="button " class="btn btn-outline-secondary "
                                                         data-bs-dismiss="modal">
-                                                        Close
+                                                        No!
                                                     </button>
 
                                                     <form action="{{ route('admin.projects.destroy', $project) }}"
-                                                        method="project">
+                                                        method="post">
                                                         @csrf
                                                         @method('DELETE')
 
-                                                        <button type="submit" class="btn btn-danger">
-                                                            Confirm
+                                                        <button type="submit" class="btn btn-outline-danger ">
+                                                            Yes
                                                         </button>
 
                                                     </form>
