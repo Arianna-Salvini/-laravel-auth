@@ -9,6 +9,21 @@
                         class="fa-solid fa-circle-plus pe-2"></i>New
                     Project</a>
             </div>
+
+            <script>
+                var alertList = document.querySelectorAll(".alert");
+                alertList.forEach(function(alert) {
+                    new bootstrap.Alert(alert);
+                });
+            </script>
+
+            @if (session('message'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    {{ session('message') }}
+                </div>
+            @endif
+
             <div class="table-responsive">
                 <table class="table table-secondary table-striped table-bordered ">
                     <thead>

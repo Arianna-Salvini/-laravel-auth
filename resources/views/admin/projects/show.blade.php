@@ -2,8 +2,17 @@
 
 @section('content')
     <section class="bg-body-tertiary">
+
         <h2 class="text-center py-4 bg-dark text-secondary">Project: {{ $project->title }}</h2>
+
         <div class="container">
+            @if (session('status'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    {{ session('status') }}
+                </div>
+            @endif
+
             <div>
                 <h3>{{ $project->title }}</h3>
                 <h5>{{ $project->subtitle }}</h5>

@@ -42,7 +42,7 @@ class ProjectController extends Controller
 
         Project::create($validated);
 
-        return to_route('admin.projects.index');
+        return to_route('admin.projects.index')->with('message', 'Project added successfully');
     }
 
     /**
@@ -50,7 +50,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('admin/projects/show', compact('project'));
+        return view('admin/projects/show', compact('project'))->with('status', 'Project updated successfully');
     }
 
     /**
@@ -58,7 +58,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        return view('admin.projects.edit', compact('project'))->with('message', 'Project updated successfully');
     }
 
     /**
