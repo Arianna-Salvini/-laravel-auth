@@ -25,8 +25,7 @@
             <div class="mb-3">
                 <label for="title" class="form-label">Project Title</label>
                 <input type="text" class="form-control @error('title') is-inavlid @enderror" name="title"
-                    id="title" aria-describedby="titleHelper" placeholder="Project's title"
-                    value="old{{ 'title' }}" />
+                    id="title" aria-describedby="titleHelper" value="{{ old('title') }}" />
                 <small id="titleHelper" class="form-text text-secondary">Type the title of your new project</small>
                 @error('title')
                     <div class="text-danger py-2">
@@ -38,8 +37,7 @@
             <div class="mb-3">
                 <label for="subtitle" class="form-label">Project Subtitle</label>
                 <input type="text" class="form-control @error('subtitle') is-inavlid @enderror" name="subtitle"
-                    id="subtitle" aria-describedby="subtitleHelper" placeholder="Project's subtitle"
-                    value="old{{ 'subtitle' }}" />
+                    id="subtitle" aria-describedby="subtitleHelper" value="{{ old('subtitle') }}" />
                 <small id="subtitleHelper" class="form-text text-secondary">Type the subtitle of your new
                     project</small>
                 @error('subtitle')
@@ -57,8 +55,7 @@
                         Project image
                     </label>
                     <input type="text" class="form-control  @error('image') is-inavlid @enderror" name="image"
-                        id="image" aria-describedby="imageHelper" placeholder="Project's image"
-                        value="old{{ 'image' }}" />
+                        id="image" aria-describedby="imageHelper" value="{{ old('image') }}" />
                     <small id="imageHelper" class="form-text text-secondary">Type the image of your new
                         project</small l>
                     @error('image')
