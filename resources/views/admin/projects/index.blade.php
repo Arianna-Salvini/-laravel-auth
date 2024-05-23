@@ -45,9 +45,15 @@
                                 <td scope="row">{{ $project->id }}</td>
                                 <td>
 
-                                    <a href="{{ route('admin.projects.show', $project) }}">
-                                        <img width="160px" src=" {{ $project->image }}" alt="{{ $project->title }}">
-                                    </a>
+                                    {{-- <a href="{{ route('admin.projects.show', $project) }}"> --}}
+                                    @if (Str::startsWith($project->image, 'https://'))
+                                        <img width="100" loading="lazy" src="{{ $project->image }}"
+                                            alt="{{ $project->title }}">
+                                    @else
+                                        <img width="100" loading="lazy" src="{{ asset('storage/' . $project->image) }}"
+                                            alt="{{ $project->title }}">
+                                    @endif
+                                    {{-- </a> --}}
                                 </td>
                                 <td>{{ $project->title }}</td>
                                 <td>{{ $project->slug }}</td>
