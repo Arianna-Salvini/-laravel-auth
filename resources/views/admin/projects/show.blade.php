@@ -19,11 +19,10 @@
             </div>
             <div class="d-flex align-items-center py-5">
                 <div>
-                    @if (Str::startsWith($project->project_image, 'https://'))
-                        <img loading="lazy" src="{{ $project->project_image }}" alt="{{ $project->title }}">
+                    @if (Str::startsWith($project->image, 'https://'))
+                        <img loading="lazy" src="{{ $project->image }}" alt="{{ $project->title }}">
                     @else
-                        <img loading="lazy" src="{{ asset('storage/' . $project->project_image) }}"
-                            alt="{{ $project->title }}">
+                        <img loading="lazy" src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}">
                     @endif
                     <p class="fw-lighter">{{ $project->slug }}</p>
                 </div>

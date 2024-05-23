@@ -77,9 +77,10 @@ class ProjectController extends Controller
         $slug= Str::slug($request->title, '-');
         $validated['slug'] = $slug;
 
-if ($request->has('image')){
-        $image_path=Storage::put('uploads', $validated['image']);
-        $validate['image']=$image_path;}
+        if ($request->has('image')){
+            $image_path=Storage::put('uploads', $validated['image']);
+            $validated['image']=$image_path;
+        }
 
         $project->update($validated);
 
