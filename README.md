@@ -24,3 +24,12 @@ Ripercorrete gli steps visti a lezione e completate le operazioni CRUD (edit/upd
 
 ## Bonus:
 Aggiungete i messaggi di sessione quando fare il redirect dopo aver creato, aggiornato e cancellato una risorsa.
+
+## Descrizione 3:
+Aggiungiamo un’immagine ai nostri progetti.
+
+Ricordiamoci di creare il symlink con l’apposito comando artisan e di aggiungere l’attributo enctype="multipart/form-data" ai form di creazione e di modifica!
+Ricordate di implementare anche la cancellazione dell'immagine esistente qualora il post venda eliminato completamente.
+
+## Descrizione 4:
+
