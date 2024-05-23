@@ -18,7 +18,7 @@
             </div>
         @endif
 
-        <form action="{{ route('admin.projects.store') }}" method="post">
+        <form action="{{ route('admin.projects.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Project Title</label>
@@ -50,8 +50,8 @@
                     <i class="fa fa-image fa-xs fa fw" aria-hidden="true"></i>
                     Project image
                 </label>
-                <input type="text" class="form-control @error('image') is-inavlid @enderror" name="image"
-                    id="image" aria-describedby="imageHelper" value="{{ old('image') }}" />
+                <input type="file" class="form-control @error('image') is-inavlid @enderror" name="image"
+                    id="image" aria-describedby="imageHelper" />
                 <small id="imageHelper" class="form-text text-secondary">Type the image of your new
                     project</small l>
                 @error('image')

@@ -18,7 +18,7 @@
             </div>
         @endif
 
-        <form action="{{ route('admin.projects.update', $project) }}" method="post">
+        <form action="{{ route('admin.projects.update', $project) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -48,14 +48,24 @@
             </div>
 
             <div class="d-flex gap-5 m-4">
-                <img width='250px' src=" {{ $project->image }}" alt="Image of {{ $project->title }}">
+
+                @if (Str::startsWith($project->image, 'https:'))
+                    <img width="160px" src=" {{ $project->image }}" alt="{{ $project->title }}">
+                @else
+                    <img width="160px" src=" {{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}">
+                @endif
+
                 <div>
                     <label for="image" class="form-label">
                         <i class="fa fa-image fa-xs fa fw" aria-hidden="true"></i>
                         Project image
                     </label>
-                    <input type="text" class="form-control  @error('image') is-inavlid @enderror" name="image"
-                        id="image" aria-describedby="imageHelper" value="{{ old('image') }}" />
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Choose file</label>
+                        <input type="file" class="form-control" name="image" id="image"
+                            aria-describedby="imageHelper" />
+                    </div>
+
                     <small id="imageHelper" class="form-text text-secondary">Type the image of your new
                         project</small l>
                     @error('image')
