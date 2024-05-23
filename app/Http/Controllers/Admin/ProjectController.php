@@ -41,8 +41,9 @@ class ProjectController extends Controller
 
         if ($request->has('image')){
         $image_path=Storage::put('uploads', $validated['image']);
-        $validate['image']=$image_path;}
-        // dd($validated, $image_path);
+        $validated['image']=$image_path;
+    };
+    // dd($validated, $image_path);
         
         Project::create($validated);
 
@@ -76,9 +77,9 @@ class ProjectController extends Controller
         $slug= Str::slug($request->title, '-');
         $validated['slug'] = $slug;
 
-        if ($request->has('image')){
-            $image_path=Storage::put('uploads', $validated['image']);
-            $validate['image']=$image_path;}
+if ($request->has('image')){
+        $image_path=Storage::put('uploads', $validated['image']);
+        $validate['image']=$image_path;}
 
         $project->update($validated);
 
