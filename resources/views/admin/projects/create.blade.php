@@ -72,9 +72,21 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn-outline-dark px-3 py-2 rounded">
-                Create
-            </button>
+            <div class="d-flex justify-content-between">
+
+                <button type="submit" class="btn-outline-dark px-3 py-2 rounded">
+                    <i class="fa fa-floppy-o pe-1" aria-hidden="true"></i>
+                    Create
+                </button>
+
+                <a href="{{ route('admin.projects.index') }}" class="btn btn-outline-dark py-2 px-3">
+                    <i class="fa-solid fa-delete-left pe-1"></i>
+                    Cancel
+                </a>
+
+            </div>
+
+
 
         </form>
     </div>

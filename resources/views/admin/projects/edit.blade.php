@@ -25,7 +25,7 @@
             <div class="mb-3">
                 <label for="title" class="form-label">Project Title</label>
                 <input type="text" class="form-control @error('title') is-inavlid @enderror" name="title"
-                    id="title" aria-describedby="titleHelper" value="{{ old('title') }}" />
+                    id="title" aria-describedby="titleHelper" value="{{ old('title', $project->title) }}" />
                 <small id="titleHelper" class="form-text text-secondary">Type the title of your new project</small>
                 @error('title')
                     <div class="text-danger py-2">
@@ -37,7 +37,7 @@
             <div class="mb-3">
                 <label for="subtitle" class="form-label">Project Subtitle</label>
                 <input type="text" class="form-control @error('subtitle') is-inavlid @enderror" name="subtitle"
-                    id="subtitle" aria-describedby="subtitleHelper" value="{{ old('subtitle') }}" />
+                    id="subtitle" aria-describedby="subtitleHelper" value="{{ old('subtitle', $project->subtitle) }}" />
                 <small id="subtitleHelper" class="form-text text-secondary">Type the subtitle of your new
                     project</small>
                 @error('subtitle')
@@ -81,7 +81,7 @@
             <div class="mb-3">
                 <label for="description" class="form-label">Description of project</label>
                 <textarea class="form-control @error('description') is-inavlid @enderror" name="description" id="description"
-                    rows="5">{{ old('description') }}</textarea>
+                    rows="5">{{ old('description', $project->title) }}</textarea>
                 @error('description')
                     <div class="text-danger py-2">
                         {{ $message }}
@@ -89,10 +89,19 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn-outline-dark px-3 py-2 rounded">
-                <i class="fa fa-floppy-o me-2" aria-hidden="true"></i>
-                Update
-            </button>
+            <div class="d-flex justify-content-between">
+
+                <button type="submit" class="btn-outline-dark px-3 py-2 rounded">
+                    <i class="fa-solid fa-file-arrow-up pe-1"></i>
+                    Update
+                </button>
+
+                <a href="{{ route('admin.projects.index') }}" class="btn btn-outline-dark py-2 px-3">
+                    <i class="fa-solid fa-delete-left pe-1"></i>
+                    Cancel
+                </a>
+
+            </div>
 
         </form>
     </div>
