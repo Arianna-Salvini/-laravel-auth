@@ -12,10 +12,14 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
+    // Posso togliere la registrazione per essere utente unico per il portfolio
+
     Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
 
     Route::post('register', [RegisteredUserController::class, 'store']);
+
+    // Basta decomentare 👆
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');
