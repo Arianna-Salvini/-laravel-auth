@@ -1,13 +1,16 @@
 @extends ('layouts.admin')
 
 @section('content')
-    <section class="bg_color">
+    <section class="bg_color text_light">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center py-4">
                 <h2 class="text-center text_light ">Projects</h2>
-                <a href="{{ route('admin.projects.create') }}" class="btn btn-dark"> <i
-                        class="fa-solid fa-circle-plus pe-2"></i>New
-                    Project</a>
+
+                <a href="{{ route('admin.projects.create') }}" class="btn_stansdard">
+                    <i class="fa-solid fa-circle-plus pe-2"></i>
+                    New Project
+                </a>
+
             </div>
 
             <script>

@@ -1,6 +1,28 @@
 @import '~bootstrap/scss/bootstrap';
 @import 'variables';
 
+main {
+    background: radial-gradient($color-primary, $color-secondary-dark);
+}
+
+.bg_dark {
+    border-color: $color-darkest;
+}
+
+.btn_stansdard {
+    text-decoration: none;
+    color: $color-lighter;
+    border: 2px solid $color-lighter;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    text-shadow: $color-darkest 1px 0 10px;
+
+
+    &:hover {
+        color: $color-primary;
+        border: 2px solid $color-primary;
+    }
+}
 
 .text_light {
     color: $color-lighter;

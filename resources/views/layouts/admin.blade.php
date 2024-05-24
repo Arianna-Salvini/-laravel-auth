@@ -70,16 +70,22 @@
                                     {{ Auth::user()->name }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
-                                    <a class="dropdown-item" href="{{ url('profile') }}">{{ __('Profile') }}</a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                <div class="dropdown-menu dropdown-menu-right nav_style " aria-labelledby="navbarDropdown">
+
+                                    <a class="dropdown-item text_primary"
+                                        href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
+
+                                    <a class="dropdown-item text_primary"
+                                        href="{{ route('admin.projects.index') }}">{{ __('Project') }}</a>
+
+                                    <a class="dropdown-item text_primary"
+                                        href="{{ url('profile') }}">{{ __('Profile') }}</a>
+
+                                    <a class="dropdown-item text_primary" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    <a class="dropdown-item"
-                                        href="{{ route('admin.projects.index') }}">{{ __('Project') }}</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
