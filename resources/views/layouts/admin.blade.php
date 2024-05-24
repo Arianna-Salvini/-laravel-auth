@@ -25,11 +25,10 @@
 <body>
     <div id="app">
 
-
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+        <nav class="navbar-expand-md shadow nav_style py-3">
+            <div class="container d-flex">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/admin') }}">
-                    <h2 class="text-danger">
+                    <h2 class="text_primary pe-3">
                         Portfolio
                     </h2>
                     {{-- config('app.name', 'Laravel') --}}
@@ -44,24 +43,24 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
+                        <li class="nav-item pe-2">
                             <a class="nav-link" href="{{ url('/admin') }}">{{ __('Admin') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.projects.index') }}">{{ __('Projects') }}</a>
+                            <a class="nav-link pe-2" href="{{ route('admin.projects.index') }}">{{ __('Projects') }}</a>
                         </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto ">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link ps-2" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link ps-2" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
