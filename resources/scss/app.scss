@@ -1,1 +1,17 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+@import 'variables';
+
+
+.text_light {
+    color: $color-lighter;
+}
+
+.text_primary {
+    color: $color-primary;
+}
+
+.nav_style {
+    color: $color-primary;
+    text-shadow: $color-darkest 1px 0 5px;
+    background-color: $color-secondary;
+}
