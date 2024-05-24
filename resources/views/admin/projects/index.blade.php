@@ -28,9 +28,9 @@
             @endif
 
             <div class="table-responsivet" style="font-size:0.8rem">
-                <table class="table table-secondary table-striped table-bordered">
+                <table class="table table-primary table-striped table-bordered">
                     <thead>
-                        <tr>
+                        <tr class="">
                             <th scope="col">ID</th>
                             <th scope="col">IMAGE</th>
                             <th scope="col">TITLE</th>
